@@ -10,9 +10,9 @@ public class ViewDetails {
 
     @Test
     public void viewDetails() {
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\Nelu\\Desktop\\drivere\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", AppConfig.getChromeDriverPath());
         WebDriver driver = new ChromeDriver();
-        driver.get("https://fasttrackit.org/selenium-test/");
+        driver.get(AppConfig.getSiteUrl());
         driver.findElement(By.id("search")).sendKeys("pillow" + Keys.ENTER);
         driver.findElement(By.xpath("//a[@class='button' and ./ancestor::*[a[@title='Pillow and Throw Set']]]")).click();
     }
