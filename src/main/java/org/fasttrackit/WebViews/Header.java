@@ -16,7 +16,18 @@ public class Header {
     public void setSearchField(String keyword){
         searchField.sendKeys("pillow"+ Keys.ENTER);
     }
+
+
+    @FindBy(xpath = "//span[text()='Cart']")
+    private WebElement cart;
+
+
     public WebElement getSearchField() {
         return searchField;
     }
+    public WebElement getCart() {
+        return cart;
+    }
+
+
 }
