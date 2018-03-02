@@ -2,10 +2,9 @@ package org.fasttrackit;
 
 import org.fasttrackit.WebViews.CreateAccount;
 import org.junit.Test;
-import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class CreateAccountAndLogIn extends TestBase {
+public class CreateAccountAndLogInTest extends TestBase {
 
     @Test
     public void createAccount() {

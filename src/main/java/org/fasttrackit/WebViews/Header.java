@@ -13,7 +13,7 @@ public class Header {
 
     private WebElement searchField;
 
-    public void setSearchField(String keyword){
+    public void typeInSearchField(String keyword){
         searchField.sendKeys("pillow"+ Keys.ENTER);
     }
 

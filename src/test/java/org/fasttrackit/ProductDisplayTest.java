@@ -4,11 +4,9 @@ import org.fasttrackit.WebViews.Header;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.PageFactory;
 
-public class ProductDisplay extends TestBase {
+public class ProductDisplayTest extends TestBase {
 
     @Test
     public void sortByName (){
