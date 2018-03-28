@@ -67,7 +67,7 @@ public class CreateAccountAndLogInTest extends TestBase {
         createAccount.getLogIn().click();
         createAccount.getForgotYourPasswordButton().click();
         createAccount.getEmailField().sendKeys("ev.grey@yahoo.com");
-        createAccount.getSubmitButton().click();
+        //createAccount.getSubmitButton().click();
     }
     }
 
