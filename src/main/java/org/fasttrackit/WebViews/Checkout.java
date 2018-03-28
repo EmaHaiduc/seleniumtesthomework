@@ -7,6 +7,12 @@ import org.openqa.selenium.support.ui.Select;
 
 public class Checkout {
 
+    @FindBy(xpath = "//ul[@class='checkout-types top']//button[@class='button btn-proceed-checkout btn-checkout']")
+    private WebElement proceedToCheckoutButton;
+
+    @FindBy(xpath = "//span[text()='Continue']")
+    private WebElement continueAfterCheckoutMethodButton;
+
 
     @FindBy(css = "input[id='login:guest']")
 
@@ -49,15 +55,16 @@ public class Checkout {
     @FindBy(xpath = "//div[@id='billing-buttons-container']//button[@title='Continue']")
     private WebElement continueButton;
 
-    @FindBy(id = "s_method_freeshipping_freeshipping")
+
+    @FindBy(xpath = "//input[@class='radio' and @name='shipping_method' and @id='s_method_freeshipping_freeshipping']")
     private WebElement freeShippingBtn;
 
 
-    @FindBy(css = "#shipping-method-buttons-container")
+    @FindBy(xpath = "//button[@class='button' and @onclick='shippingMethod.save()']//span[text()='Continue']")
     private WebElement continueAfterShippingDetailsBtn;
 
 
-    @FindBy(id = "payment-buttons-container")
+    @FindBy(xpath = "//button[@class='button' and @onclick='payment.save()']//span[text()='Continue']")
     private WebElement continueAfterPaymentOptionBtn;
 
 
@@ -111,19 +118,24 @@ public class Checkout {
         return continueButton;
     }
 
-    public WebElement getFreeShipping() {
-        return freeShippingBtn;
-    }
+    public WebElement getFreeShippingBtn() { return freeShippingBtn; }
 
-    public WebElement getContinueAfterShippingDetails() {
-        return continueAfterShippingDetailsBtn;
-    }
 
-    public WebElement getContinueAfterPaymentOption() {
+    public WebElement getContinueAfterShippingDetailsBtn() { return continueAfterShippingDetailsBtn;
+    }
+    public WebElement getContinueAfterPaymentOptionBtn() {
         return continueAfterPaymentOptionBtn;
     }
 
     public WebElement getPlaceOrderButton() {
         return placeOrderButton;
+    }
+
+    public WebElement getProceedToCheckoutButton() {
+        return proceedToCheckoutButton;
+    }
+
+    public WebElement getContinueAfterCheckoutMethodButton() {
+        return continueAfterCheckoutMethodButton;
     }
 }

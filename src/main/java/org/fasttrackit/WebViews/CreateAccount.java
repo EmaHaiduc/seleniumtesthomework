@@ -31,7 +31,7 @@ public class CreateAccount {
     @FindBy(xpath = "//span[text()='Register']")
     private WebElement registerBtn;
 
-    @FindBy(css = "#email")
+    @FindBy(xpath = "//input[@id='email']")
     private WebElement logInEmail;
 
     @FindBy(id = "pass")
@@ -41,6 +41,18 @@ public class CreateAccount {
     @FindBy(id = "send2")
 
     private WebElement logInButton;
+
+
+    @FindBy(xpath = "//p[@class='hello']//strong")
+    private WebElement forgotYourPasswordButton;
+
+
+    @FindBy (id = "email_address")
+    private  WebElement emailField;
+
+
+    @FindBy(xpath = "//button[contains(@title, 'Submit')]")
+    private WebElement submitButton;
 
     public WebElement getFirstName() {
         return firstName;
@@ -88,5 +100,17 @@ public class CreateAccount {
 
     public WebElement getLogInButton() {
         return logInButton;
+    }
+
+    public WebElement getForgotYourPasswordButton() {
+        return forgotYourPasswordButton;
+    }
+
+    public WebElement getEmailField() {
+        return emailField;
+    }
+
+    public WebElement getSubmitButton() {
+        return submitButton;
     }
 }
