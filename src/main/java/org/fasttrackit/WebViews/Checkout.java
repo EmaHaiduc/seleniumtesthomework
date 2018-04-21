@@ -64,11 +64,13 @@ public class Checkout {
     private WebElement continueAfterShippingDetailsBtn;
 
 
-    @FindBy(xpath = "//button[@class='button' and @onclick='payment.save()']//span[text()='Continue']")
+
+
+    @FindBy(xpath = "//*[@id='payment-buttons-container']/button")
     private WebElement continueAfterPaymentOptionBtn;
 
 
-    @FindBy(xpath = "//button[@title='Place Order']")
+    @FindBy(xpath = "//*[@id='review-buttons-container']/button/span/span")
     private WebElement placeOrderButton;
 
 
@@ -123,9 +125,7 @@ public class Checkout {
 
     public WebElement getContinueAfterShippingDetailsBtn() { return continueAfterShippingDetailsBtn;
     }
-    public WebElement getContinueAfterPaymentOptionBtn() {
-        return continueAfterPaymentOptionBtn;
-    }
+
 
     public WebElement getPlaceOrderButton() {
         return placeOrderButton;
@@ -137,5 +137,9 @@ public class Checkout {
 
     public WebElement getContinueAfterCheckoutMethodButton() {
         return continueAfterCheckoutMethodButton;
+    }
+
+    public WebElement getContinueAfterPaymentOptionBtn() {
+        return continueAfterPaymentOptionBtn;
     }
 }

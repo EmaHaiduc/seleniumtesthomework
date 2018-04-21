@@ -10,12 +10,11 @@ public class Header {
 
 
     @FindBy(id = "search")
-
     private WebElement searchField;
 
-    public void typeInSearchField(String keyword){
-        searchField.sendKeys("pillow"+ Keys.ENTER);
-    }
+
+    @FindBy( xpath = "//input[@class='input-text required-entry']")
+     private WebElement typeInSearchField;
 
 
     @FindBy(xpath = "//span[text()='Cart']")
@@ -25,8 +24,12 @@ public class Header {
     public WebElement getSearchField() {
         return searchField;
     }
+
     public WebElement getCart() {
         return cart;
     }
 
+    public WebElement getTypeInSearchField() {
+        return typeInSearchField;
+    }
 }

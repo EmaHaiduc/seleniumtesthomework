@@ -43,7 +43,7 @@ public class CreateAccount {
     private WebElement logInButton;
 
 
-    @FindBy(xpath = "//p[@class='hello']//strong")
+    @FindBy(xpath = "//li//a[@class='f-left']")
     private WebElement forgotYourPasswordButton;
 
 
@@ -51,7 +51,7 @@ public class CreateAccount {
     private  WebElement emailField;
 
 
-    @FindBy(xpath = "//button[contains(@title, 'Submit')]")
+    @FindBy(xpath = "//button//span[text()='Submit']")
     private WebElement submitButton;
 
     public WebElement getFirstName() {

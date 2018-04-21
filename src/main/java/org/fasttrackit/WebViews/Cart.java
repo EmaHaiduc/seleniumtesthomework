@@ -1,16 +1,19 @@
 package org.fasttrackit.WebViews;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class Cart {
-    @FindBy(xpath = "//button[contains(@class, 'btn-cart') and ./ ancestor::* [a [@ title= 'Shay Printed Pillow']]]")
-    private WebElement addToCartButton;
+    public  WebElement getaddToCartBut(String productName, WebDriver driver){
+        return driver.findElement(By.xpath("//button[contains(@class, 'btn-cart') and ./ ancestor::* [a [@ title= 'Shay Printed Pillow']]]"));
 
-    @FindBy(xpath = "//td[@class='product-cart-actions']/input[@value='1']")
-    private WebElement inputvaluefield;
+    }
+
     @FindBy(xpath = "//input[@class='input-text qty']")
-    private WebElement insertquantity;
+    private WebElement valuefield;
+
 
 
     @FindBy(xpath = "//button[contains(@class, 'btn-cart') and ./ ancestor::*[a[@title='Silver Desert Necklace']]]")
@@ -33,20 +36,15 @@ public class Cart {
         return removeFromCart;
     }
 
-    public WebElement getAddToCartButton() {
-        return addToCartButton;
+
+    public WebElement getvaluefield() {
+        return valuefield;
     }
 
-    public WebElement getInputvaluefield() {
-        return inputvaluefield;
-    }
-
-    public WebElement getInsertquantity() {
-        return insertquantity;
-    }
 
     public WebElement getAddtoCartBtn() {
         return addtoCartBtn;
     }
 
 }
+

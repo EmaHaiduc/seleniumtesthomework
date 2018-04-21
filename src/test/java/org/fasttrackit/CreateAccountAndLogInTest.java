@@ -23,7 +23,8 @@ public class CreateAccountAndLogInTest extends TestBase {
         createAccount.getPassword().sendKeys("xyz100");
         createAccount.getConfirmPassword().sendKeys("xyz100");
         createAccount.getRegisterBtn().click();
-
+         WebElement successmsge= driver.findElement(By.xpath("//li[@class='success-msg']"));
+         assertThat("Couldn't create account.", successmsge.getText(), containsString("Thank you for registering with Madison Island."));
 
     }
 
@@ -38,7 +39,6 @@ public class CreateAccountAndLogInTest extends TestBase {
         createAccount.getLogInButton().click();
         WebElement successfulLoginMessage=driver.findElement(By.xpath("//p[@class='hello']//strong"));
         assertThat("Try again.", successfulLoginMessage.getText(), containsString("Hello, Eva Grey!"));
-
 
     }
 
@@ -59,7 +59,7 @@ public class CreateAccountAndLogInTest extends TestBase {
 
 
     @Test
-    //incomplet
+
      public void forgotPassword() {
 
         CreateAccount createAccount= PageFactory.initElements(driver, CreateAccount.class);
@@ -67,7 +67,10 @@ public class CreateAccountAndLogInTest extends TestBase {
         createAccount.getLogIn().click();
         createAccount.getForgotYourPasswordButton().click();
         createAccount.getEmailField().sendKeys("ev.grey@yahoo.com");
-        //createAccount.getSubmitButton().click();
+        createAccount.getSubmitButton().click();
+        WebElement successmsg=driver.findElement(By.xpath("//li[@class='success-msg']"));
+        assertThat("Email does not exist.", successmsg.getText(), containsString("If there is an account associated with ev.grey@yahoo.com you will receive an email with a link to reset your password."));
+
     }
     }
 
